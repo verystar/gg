@@ -7,11 +7,7 @@ import (
 	"github.com/verystar/gg"
 )
 
-type Point struct {
-	X, Y float64
-}
-
-func Polygon(n int) []Point {
+func Polygons(n int) []Point {
 	result := make([]Point, n)
 	for i := 0; i < n; i++ {
 		a := float64(i)*2*math.Pi/float64(n) - math.Pi/2
@@ -28,7 +24,7 @@ func main() {
 	dc.SetHexColor("#FFFFFF")
 	dc.Clear()
 	n := 5
-	points := Polygon(n)
+	points := Polygons(n)
 	for x := S / 2; x < W; x += S {
 		dc.Push()
 		s := rand.Float64()*S/4 + S/4
